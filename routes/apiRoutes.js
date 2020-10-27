@@ -1,9 +1,9 @@
-const Workout = require("../models/workout.js")
+const db = require("../models");
 
 module.exports = function (app) {
 
   app.get("/api/workouts", (req, res) => {
-    Workout.find({})
+    db.Workout.find({})
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -13,7 +13,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/workouts", (req, res) => {
-    Workout.create({})
+    db.Workout.create({})
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -23,7 +23,7 @@ module.exports = function (app) {
   });
 
   app.get("/api/workouts/range", (req, res) => {
-    Workout.find({})
+    db.Workout.find({})
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -33,7 +33,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/workouts/range", (req, res) => {
-    Workout.create({})
+    db.Workout.create({})
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
@@ -43,7 +43,7 @@ module.exports = function (app) {
   });
 
   app.put("/api/workouts/:id", function ({ body, params }, res) {
-    Workout.findByIdAndUpdate(
+    db.Workout.findByIdAndUpdate(
       params.id,
       { $push: { exercises: body } },
       { new: true, runValidators: true }).then(dbWorkout => {
