@@ -14,4 +14,6 @@ User can easily see their last workout data, and log in their latest work-out in
 The Workout Dashboard displays user data of their entire workout sessions.
 
 
+# Credits
 
+Uses Node / Mongoose, Morgan, and Express NPMs
